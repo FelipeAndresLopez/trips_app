@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'description_place.dart';
+import 'package:flutter/services.dart';
+import 'trips_cupertino.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.light));
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  String descriptionDummy = "Lorem ipsum dolor sit amet, consectetur adipiscing elit eu non pro id el us elementum et. Lorem ipsum dolor sit amet, consectetur adipiscing elit eu non pro id el us elementum et";
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,13 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.indigo,
       ),
-      home:  Scaffold(
-        appBar: AppBar(
-          title: Text("Share"),
-          centerTitle: true
-        ),
-        body: new DescriptionPlace("Bahamas", 4, descriptionDummy)
-      )//MyHomePage(title: 'Flutter Demo Home Page'),
+      home: TripsCupertino(), //MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
